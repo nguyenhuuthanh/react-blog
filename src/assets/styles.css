@@ -716,3 +716,28 @@ template {
 [hidden] {
   display: none;
 }
+
+/*------------------- Custom theme ------------------------*/
+.inner-content {
+  display: flex;
+}
+.inner-content aside {
+  min-width: 200px;
+  max-width: 200px;
+}
+.inner-content main {
+  width: 100%;
+}
+.primary-header h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 40px;
+}
+.description h2 {
+  font-weight: bold;
+  color: blue;
+}
+.primary-aside ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #5f5f5f;
+}

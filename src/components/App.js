@@ -10,23 +10,25 @@ const App = () => {
         <h2 style={{ textAlign: 'center', color: 'red' }}>Blog demo with ReactJS</h2>
       </header>
       <Router>
-        <aside className="primary-aside">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/posts">Posts</Link></li>
-          </ul>
-        </aside>
-        <main>
-          <Switch>
-            <Route path="/posts">
-              <VisibilityFilter />
-              <PostList />
-            </Route>
-            <Route path="/">
-                <h1>Home page</h1>
-            </Route>
-          </Switch>
-        </main>
+        <div className="inner-content">
+          <aside className="primary-aside">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/posts">Posts</Link></li>
+            </ul>
+          </aside>
+          <main>
+            <Switch>
+              <Route path="/posts">
+                <VisibilityFilter />
+                <PostList />
+              </Route>
+              <Route path="/">
+                  <h1>Home page</h1>
+              </Route>
+            </Switch>
+          </main>
+        </div>
       </Router>
     </div>
   );

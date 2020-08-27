@@ -30,8 +30,14 @@ class PostList extends React.Component {
 }
 
 const mapStateToProps = state => {
+  let posts = [];
+  if (state.filters.keyword) {
+    posts = state.posts.filter(post => (post.title.indexOf(state.filters.keyword) !== -1))
+  } else {
+    posts = state.posts;
+  }
   return {
-    posts: state.posts
+    posts
   };
 };
 
