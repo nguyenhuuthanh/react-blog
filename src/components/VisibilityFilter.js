@@ -18,7 +18,7 @@ class VisibilityFilter extends React.Component {
 
   render() {
     return (
-      <div className="search-section top-section">
+      <div className={cx('search-section', 'top-section')}>
         <input
           onChange={e => this.updateInput(e.target.value)}
           value={this.state.input}
