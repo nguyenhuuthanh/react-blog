@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="ui container">
       <header className="primary-header">
-        <h2 style={{ textAlign: 'center', color: 'red' }}>Blog demo with ReactJS</h2>
+        <h2 style={{ textAlign: 'center' }}>Blog demo with ReactJS</h2>
       </header>
       <Router>
         <div className="inner-content">
