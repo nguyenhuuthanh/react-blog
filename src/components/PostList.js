@@ -4,7 +4,7 @@ import { fetchPostsAndUsers } from "../actions";
 
 import UserHeader from "./UserHeader";
 
-class Postlist extends React.Component {
+class PostList extends React.Component {
   componentDidMount() {
     this.props.fetchPostsAndUsers();
   }
@@ -38,4 +38,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchPostsAndUsers }
-)(Postlist);
+)(PostList);

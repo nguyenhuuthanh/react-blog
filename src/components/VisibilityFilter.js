@@ -1,10 +1,13 @@
 import React from "react";
 import cx from "classnames";
+import { connect } from 'react-redux';
+import { setFilter } from '../actions';
+
 
 class VisibilityFilter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { input: "" };
+    this.state = { input: '' };
   }
 
   updateInput = input => {
@@ -12,8 +15,9 @@ class VisibilityFilter extends React.Component {
   };
 
   handleFilter = () => {
-    // dispatches actions to add todo
-    // sets state back to empty string
+    // dispatches actions to add filter keyword
+    this.props.setFilter(this.state.input);
+
   };
 
   render() {
@@ -31,4 +35,7 @@ class VisibilityFilter extends React.Component {
   }
 }
 
-export default VisibilityFilter;
+export default connect(
+  null,
+  { setFilter }
+)(VisibilityFilter);

@@ -5,11 +5,6 @@ import { FETCH_POSTS, FETCH_USERS, SET_FILTER } from '../reducers/actionTypes';
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
 
-  // PREVIOUS SETUP
-  // const userIds = _.uniq(_.map(getState().posts, "userId"));
-  // userIds.forEach(id => dispatch(fetchUser(id)));
-
-  //LODASH CHAIN SETUP
   _.chain(getState().posts)
     .map("userId")
     .uniq()
@@ -32,22 +27,9 @@ export const fetchUser = id => async dispatch => {
   });
 };
 
-// export const fetchUser = id => dispatch => {
-//   _fetchUser(id, dispatch);
-// };
-
-// // **MEMOIZATION**
-// const _fetchUser = _.memoize(async (id, dispatch) => {
-//   const response = await axios.get(`/users/${id}`);
-//   dispatch({
-//     type: "FETCH_USER",
-//     payload: response.data
-//   });
-// });
-
-export const setFilter = content => ({
+export const setFilter = keyword => ({
   type: SET_FILTER,
   payload: {
-    content,
+    keyword,
   }
 });
