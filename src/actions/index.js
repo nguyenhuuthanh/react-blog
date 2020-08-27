@@ -1,6 +1,6 @@
 import axios from "../apis/jsonPlaceHolder";
 import _ from "lodash";
-import { FETCH_POSTS, FETCH_USERS } from '../reducers/actionTypes';
+import { FETCH_POSTS, FETCH_USERS, SET_FILTER } from '../reducers/actionTypes';
 
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
@@ -44,3 +44,10 @@ export const fetchUser = id => async dispatch => {
 //     payload: response.data
 //   });
 // });
+
+export const setFilter = content => ({
+  type: SET_FILTER,
+  payload: {
+    content,
+  }
+});
